@@ -67,11 +67,11 @@ describe('<BlogPost />', () => {
   })
 
   it('renders BlogImage thumbnail component', () => {
-    expect(component.find({ src: samplePost.data.thumbnail }).length).toEqual(1);
+    expect(component.find({ className: "croppit" }).length).toEqual(1);
   });
 
   it('renders correct src for BlogImage thumbnail component', () => {
-    expect(component.find({ src: samplePost.data.thumbnail }).prop('src')).toEqual(samplePost.data.thumbnail);
+    expect(component.find({ className: "croppit" }).prop('style').backgroundImage).toEqual(`url(${samplePost.data.thumbnail})`);
   });
 
   it('renders category', () => {
